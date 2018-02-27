@@ -1,0 +1,56 @@
+Classe Topeira
+	Variáveis: Figura, player, ID, teclamata, X, Y, tempovida, bool Existe, bool serEpceial, epecialDoInimigo;
+	Construtor ( player, ID, Tecla que mata)
+	Métodos:
+	Update (buffer, int & numero de topeiras não acertadas, EspecialDoInimigo /*inimigo.getEspecial()*/, int 		&especial do player){chama os outros 			métodos, incrementa o tempo de vida} //incrementa ou 		decrementa caso morra ou não.
+	Criar (especialDoInimigo, quanto tempo vai durar, bool serEspecial){}// pode ser piscando.. dependendo do modo, pode 			mudar a figura e decrementar caso mate um COELHO.
+	Aparecer (buffer)
+	Desaparecer(buffer)
+	Permanecer(buffer)
+	
+
+
+Struct Especial
+	código do especial,<--- enumeração, bool em uso, quanto tempo demora.
+	Métodos: Animações..
+	
+
+
+Classe Player
+	Variáveis: Tempo para aparecer as próximas topeiras "Forma de interação entre players de forma que p1 + p2 = 				constante, também tem a ver com as topeiras erradas", numero de topeiras não acertadas ou de buracos errados, 		qto tempo demora cada topeira, num de especiais, Personagem, vetor de topeiras, bool levando especiais, vetor 		de especial, Especial pra mandar pro inimigo
+	Contrutor (player 1 ou 2, personagem)
+	Métodos:
+	Martelada()//aparecer a marreta onde eu clicar
+	getEspecial(); //retornao especial em uso.
+
+Classe Fase
+	variáveis: background, música, tabuleiros, lifezin de velocidade de jogo.
+	construtor (personagem1, personagem2)
+	Métodos:
+	Principal()
+		updates, randomizando local, verifica se topeira é especial, atualiza velocidade de jogo, verifica se acabou 		jogo.
+
+
+Classe Personagem (abstrata)
+	Variáveis: Nome, Figura, vetor de Especial, métodos de animações e firulas, música.
+
+Classe Nome do personagem: herda de Personagem //Um personagem qualquer
+
+
+
+Especiais:
+	Embaralhamento de teclas que mata.
+	Aparecer piscando.
+	Roubar especial do adversário.
+	Aumentar a velocidade do jogo do adversário. //tempo das topeiras
+	Diminuir a sua velocidade de jogo.	//tempo das topeiras
+	Precisar de mais de um clique para matar a topeira do adversário.
+	Diminuir sua quantidade de topeiras não acertadas.
+	Aparecer coelhos (topeiras falsas) ao invés de topeiras.
+	Reverter Especiais
+	"Reiniciar o jogo"
+
+
+Objetivo:
+	Permanecer vivo.
+	Não encher sua quantidade de topeiras não acertadas ou acertar num buraco vazio.

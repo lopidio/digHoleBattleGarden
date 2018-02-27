@@ -1,0 +1,43 @@
+Os dois jogadores deverão eliminar todas as toupeiras que aparecerem em seu respectivo tabuleiro e, através de jogadas especiais, dificultar que o objetivo do adversário seja realizado.
+Perde um round quem deixar esvaziar a barra de status.
+Perde ponto quem deixar de matar uma toupeira, acertar um buraco vazio ou acertar um coelho.
+Cada partida é composta por, no máximo, três rounds, onde quem ganhar dois rounds será o vencedor da partida.
+Para se utilizar de jogadas especiais, o jogador deve ter conquistado no mínimo uma estrela.
+Cada jogador possui 4 jogadas especiais, e a escolha do especial a ser utilizado depende, único e exclusivamente, da quantidade de estrelas conquistadas limitando-se à quatro.
+Após uma jogada especial ser utilizada, o jogador que a utilizou fica sem estrelas conquistadas.
+
+Controles:
+	Player 1:
+		Q,  W,  E,
+		A,  S,  D,
+		Z,  X,  C.
+		Tecla especial: T
+
+	Player 2:
+		7,  8,  9,
+		4,  5,  6,
+		1,  2,  3. (Todas do teclado numérico)
+		Tecla especial: seta para cima.
+
+
+
+Descrição dos especiais
+	Player 1:
+		Primeiro:
+			As toupeiras adversárias ficarão continuamente aparecendo e desaparecendo, dificultanto a percepção do adversário.
+		Segundo:
+			O jogador adversário deve apertar duas vezes a mesma tecla para eliminar alguma toupeira.
+		Terceiro:
+			O jogador fica com o número de estrelas igual ao número de estrelas conquistadas pelo adversário.
+			O adversário fica sem estrela conquistada.
+		Quarto:
+			Desloca uma coluna as teclas adversárias. (Uma toupeira que visivelmente seria eliminada através da tecla 8, agora será através da tecla 7)
+	Player 2:
+		Primeiro:
+			Elimina automaticamente qualquer objeto que aparecer na coluna mais a esquerda do jogador. Podendo o objeto ser estrela, coelho ou toupeira.
+		Segundo:
+			Retarda o seu próprio jogo, diminuindo a velocidade de aparição das toupeiras.
+		Terceiro:
+			Elimina todos os objetos que estão presentes no tabuleiro do jogador.
+		Quarto:
+			Diminui a barra de status do adversário.
