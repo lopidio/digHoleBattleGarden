@@ -48,7 +48,7 @@ Especial::Especial(char Cod_)
                          temMusica = true;
                          nomeMusica = "Sounds/especial.mid";
                          animInicial = true;
-                         nomeAnimInicial = "FX/dark1.bmp";
+                         nomeAnimInicial = "Fx/dark1.bmp";
                      break;//}
         case NENHUM://{ 0
                     break;//}
@@ -64,14 +64,14 @@ Especial::Especial(char Cod_)
                         exclusivo = true;
                         tempoVida = 180;
                         animNormal = true;
-                        nomeAnimNormal = "FX/especialColuna.bmp";
+                        nomeAnimNormal = "Fx/especialColuna.bmp";
                         temMusica = false;
                         animInicial = true;
-                        nomeAnimInicial = "FX/dark1.bmp";
+                        nomeAnimInicial = "Fx/dark1.bmp";
                     break;//}
         case EMBARALHAR_TECLAS_COL_ESQ: //{ 33
                         animNormal = true;
-                        nomeAnimNormal = "FX/DeslocaEsquerda.bmp";
+                        nomeAnimNormal = "Fx/DeslocaEsquerda.bmp";
                         tempoVida = 240;
                     break;//}
         case ROUBAR_ESPECIAL_ADV: //{ 52

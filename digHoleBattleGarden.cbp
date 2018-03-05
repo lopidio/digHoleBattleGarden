@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="digHoleBattleGarden" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/digHoleBattleGarden" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="liballeg" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/digHoleBattleGarden" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Linker>
+			<Add library="liballeg" />
+		</Linker>
+		<Unit filename="Animacao.cpp" />
+		<Unit filename="Animacao.h" />
+		<Unit filename="Como Jogar.txt" />
+		<Unit filename="Especial.cpp" />
+		<Unit filename="Especial.h" />
+		<Unit filename="FPS.h" />
+		<Unit filename="Fase.cpp" />
+		<Unit filename="Fase.h" />
+		<Unit filename="Formulário BOJOGÁ.doc" />
+		<Unit filename="Life.cpp" />
+		<Unit filename="Life.h" />
+		<Unit filename="Personagem.cpp" />
+		<Unit filename="Personagem.h" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.h" />
+		<Unit filename="README.md" />
+		<Unit filename="Tecla.cpp" />
+		<Unit filename="Tecla.h" />
+		<Unit filename="Toupeira Battle Gaiden.txt" />
+		<Unit filename="Toupeira.cpp" />
+		<Unit filename="Toupeira.h" />
+		<Unit filename="allegro.h" />
+		<Unit filename="compile" />
+		<Unit filename="digHole" />
+		<Unit filename="digHoleBattleGarden.cbp" />
+		<Unit filename="digHoleBattleGarden.depend" />
+		<Unit filename="framePS.h" />
+		<Unit filename="liballeg" />
+		<Unit filename="liballeg.so.4.4" />
+		<Unit filename="liballeg.so.4.4.2" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

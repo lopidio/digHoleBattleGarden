@@ -1,1 +1,0 @@
- g++ *.cpp *.h -o Debug/digHole -I/usr/include/ -L/usr/lib/x86_64-linux-gnu -lalleg

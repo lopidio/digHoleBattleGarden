@@ -4,14 +4,14 @@
 
 Life::Life()
 {
-    borda = load_bitmap("FX/bordalife.pcx", NULL);
-    figura = load_bitmap("FX/efeitoLife.pcx", NULL);
+    borda = load_bitmap("Fx/bordalife.pcx", NULL);
+    figura = load_bitmap("Fx/efeitoLife.pcx", NULL);
     if (!borda){
-        allegro_message("Erro ao ler 'FX/bordalife.pcx'");
+        allegro_message("Erro ao ler 'Fx/bordalife.pcx'");
         exit(1);
     }
     if (!figura){
-        allegro_message("Erro ao ler 'FX/efeitoLife.pcx'");
+        allegro_message("Erro ao ler 'Fx/efeitoLife.pcx'");
         exit(1);
     }
     contFrame =0;

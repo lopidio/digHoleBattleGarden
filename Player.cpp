@@ -62,9 +62,9 @@ Player::~Player()
 
 
 void Player::carregarObj(){
-    tabuleiro =load_bitmap("FX/TabuleiroProfissional.pcx", NULL);
+    tabuleiro =load_bitmap("Fx/TabuleiroProfissional.pcx", NULL);
     if (!tabuleiro){
-         allegro_message("Nao e possivel ler 'FX/TabuleiroProfissional.pcx'");
+         allegro_message("Nao e possivel ler 'Fx/TabuleiroProfissional.pcx'");
          exit(1);
     }
     mudaCor();

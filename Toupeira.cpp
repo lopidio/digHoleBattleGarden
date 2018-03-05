@@ -13,7 +13,7 @@ SAMPLE* loadSom(const char* nomeSom){
     return som;
 }
 BITMAP* loadFigura(){
-    static BITMAP* bmp = load_bitmap("FX/Toupeiras.pcx", NULL);
+    static BITMAP* bmp = load_bitmap("Fx/Toupeiras.pcx", NULL);
     return bmp;
 }
 
@@ -24,9 +24,9 @@ Toupeira::Toupeira(char playerID, char ID, unsigned short KEY_KILL_TOUPEIRA_)
     KEY_KILL_TOUPEIRA = KEY_KILL_TOUPEIRA_;
     KEY_KILL = KEY_KILL_TOUPEIRA;
     ativa = false;
-    figura = loadFigura(); //load_bitmap("FX/Toupeiras.pcx", NULL);
+    figura = loadFigura(); //load_bitmap("Fx/Toupeiras.pcx", NULL);
     if (!figura){
-         allegro_message("Nao e possivel ler 'FX/Toupeiras.bmp'");
+         allegro_message("Nao e possivel ler 'Fx/Toupeiras.bmp'");
          exit(1);
     }
     x = (playerID - 1)*400; //Ajeitar esses valores!!!

@@ -4,6 +4,7 @@
 //Boa sorte a todos nós!
 //Ave Lopídio!
 #include "Fase.h"
+#include <iostream>
 
 //{        TIMER!!!
 volatile bool tempoFPS = true;
@@ -35,9 +36,9 @@ void loading(){ //Page flip
     BITMAP* bmp = create_video_bitmap(800,600);
     #define numFrame 8
     static char step = 1, contFrame = 0;
-    BITMAP* gui = load_bitmap("FX/guilogo.pcx", NULL);
+    BITMAP* gui = load_bitmap("Fx/guilogo.pcx", NULL);
     if (!gui){
-        allegro_message("Erro ao ler arquivo 'guilogo.pcx'");
+        allegro_message("Erro ao ler arquivo 'Fx/guilogo.pcx'");
         exit(1);
     }
     contFrame+=step;
@@ -64,34 +65,34 @@ Fase::Fase(Personagem* pe1, Personagem* pe2, char frames)
     musica = p1->getPersonagem()->getMusica(); //Pega a música do p1
     background = p1->getPersonagem()->getBackground();//pega o cenário do p1
     //{ inicia as animações e Bitmaps
-    trofeu1 = new Animacao("FX/trofeu.bmp", 6,0,60,3, true);
-    trofeu2 = new Animacao("FX/trofeu.bmp", 6,650,60,3, true);
+    trofeu1 = new Animacao("Fx/trofeu.bmp", 6,0,60,3, true);
+    trofeu2 = new Animacao("Fx/trofeu.bmp", 6,650,60,3, true);
     trofeu2->inverteFigura();
-    terra1 =  new Animacao("FX/terra.pcx", 4 , 110, 560, 1, true);
-    terra2 =  new Animacao("FX/terra.pcx", 4 , 610, 560, 1, true);
-    terra3 =  new Animacao("FX/terra.pcx", 4 , 710, 560, 1, true);
-    barraEspeciais1 = new Animacao("FX/estrelinhas.bmp",7, 0, 200, 5, true);
-    barraEspeciais2 = new Animacao("FX/estrelinhas.bmp",7, 740, 200, 5, true);
+    terra1 =  new Animacao("Fx/terra.pcx", 4 , 110, 560, 1, true);
+    terra2 =  new Animacao("Fx/terra.pcx", 4 , 610, 560, 1, true);
+    terra3 =  new Animacao("Fx/terra.pcx", 4 , 710, 560, 1, true);
+    barraEspeciais1 = new Animacao("Fx/estrelinhas.bmp",7, 0, 200, 5, true);
+    barraEspeciais2 = new Animacao("Fx/estrelinhas.bmp",7, 740, 200, 5, true);
     terra2->defineLoop(2,1,4); //Só pra mudar o frame atual, pra não ficar com os msms frames que as outras
     terra1->inverte();
     barraEspeciais1->defineLoop(1,3,6);
     barraEspeciais2->defineLoop(1,3,6);
     trofeu1->defineLoop(1,3,6);
     trofeu2->defineLoop(1,3,6);
-    num = load_bitmap("FX/Numeros.bmp", NULL);
+    num = load_bitmap("Fx/Numeros.bmp", NULL);
     if (!num){
-        allegro_message("Impossivel carregar 'FX/Numeros.bmp");
+        allegro_message("Impossivel carregar 'Fx/Numeros.bmp");
         exit(1);
     }
-    pause = load_bitmap("FX/Pause.bmp", NULL);
+    pause = load_bitmap("Fx/Pause.bmp", NULL);
     if (!pause){
-        allegro_message("Impossivel carregar 'FX/Pause.bmp");
+        allegro_message("Impossivel carregar 'Fx/Pause.bmp");
         exit(1);
     }
     destroy_bitmap(pause);
-    menuPause = load_bitmap("FX/MenuPause.bmp", NULL);
+    menuPause = load_bitmap("Fx/MenuPause.bmp", NULL);
     if (!pause){
-        allegro_message("Impossivel carregar 'FX/MenuPause.bmp");
+        allegro_message("Impossivel carregar 'Fx/MenuPause.bmp");
         exit(1);
     }
     destroy_bitmap(menuPause);
@@ -101,9 +102,13 @@ Fase::Fase(Personagem* pe1, Personagem* pe2, char frames)
     roundP1 = 0;
     roundP2 = 0;
     remove_int(loading);
+
     video_page[0] = create_video_bitmap(SCREEN_W, SCREEN_H);
-    video_page[1] = create_video_bitmap(SCREEN_W, SCREEN_H);
+    video_page[1] = video_page[0];//create_video_bitmap(SCREEN_W, SCREEN_H);
     viraPagina = false;
+            std::cout << " pagina0: " << video_page[0] << std::endl;
+            std::cout << " pagina1: " << video_page[1] << std::endl;
+
     animRound();
     carregandoTela();
 }
@@ -140,20 +145,25 @@ void Fase::carregandoTela(){ //Carrega o background
 
 void Fase::animRound(){ //Double Buffer!
     play_midi(musica, true);
-    roundsNome =  new Animacao("FX/RoundNome.pcx", 6 , 400 -535/2, 300-114/2, 1, false);
-    roundsNum =  new Animacao("FX/RoundNum.pcx", 6 , 600 , 300-114/2, 3, false);
+    roundsNome =  new Animacao("Fx/RoundNome.pcx", 6 , 400 -535/2, 300-114/2, 1, false);
+    roundsNum =  new Animacao("Fx/RoundNum.pcx", 6 , 600 , 300-114/2, 3, false);
+
     roundsNum->setAnimacao(roundP1 + roundP2);
     installFPS(FPS);
     //BITMAP * buffer = create_bitmap( SCREEN_W, SCREEN_H);  //declarando as páginas do page flipping
 
-    for (char i = 0; i <2*FPS; i++, viraPagina = viraPagina^true){ //Tempinho parado
+    for (short i = 0; i <2*FPS; i++){ //Tempinho parado
+        viraPagina = !viraPagina;
         draw_sprite(video_page[viraPagina], background,0,0);
         trofeu1->imprime(video_page[viraPagina]);
         trofeu2->imprime(video_page[viraPagina]);
-        //draw_sprite(screen, buffer,0,0);
+//        draw_sprite(screen, buffer,0,0);
+        std::cout<<" i: " << i <<"; SECOND   viraPagina: "<< viraPagina << std::endl;
         show_video_bitmap(video_page[viraPagina]);
         syncFPS();
     }
+                    std::cout << " Saiu!!\n";
+
     for (char i = 1; i <2*FPS; i++, viraPagina = viraPagina^true){ //Animação do nome e do número
         draw_sprite(video_page[viraPagina], background,0,0);
         roundsNome->imprime(video_page[viraPagina]);
@@ -163,6 +173,7 @@ void Fase::animRound(){ //Double Buffer!
         show_video_bitmap(video_page[viraPagina]);
         syncFPS();
     }
+
     removeFps();
     //destroy_bitmap(buffer);
     delete roundsNome;
@@ -404,8 +415,8 @@ void Fase::pausar(BITMAP* telaAntiga){
     tecla.push_back(Tecla(KEY_RIGHT));
     tecla.push_back(Tecla(KEY_LEFT));
     int volWave, volMid;
-    pause = load_bitmap("FX/Pause.bmp", NULL);
-    menuPause = load_bitmap("FX/MenuPause.bmp", NULL);
+    pause = load_bitmap("Fx/Pause.bmp", NULL);
+    menuPause = load_bitmap("Fx/MenuPause.bmp", NULL);
     BITMAP *fundo = create_bitmap(800, 600);
     draw_sprite(fundo, telaAntiga,0,0);
     draw_sprite(fundo, pause, 400 - pause->w/2,300- pause->h/2);

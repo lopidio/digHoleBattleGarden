@@ -1,7 +1,6 @@
 #include "Animacao.h"
 
 
-
 Animacao::Animacao(){
 }
 Animacao::Animacao(const char* nomeArquivo,char numFrames_, short x_, short y_, char numAnimacoes_ = 1, bool loop_ = false){

@@ -54,7 +54,7 @@ Personagem::Personagem(char cod_)
     }
     //destruir somEspecial, e carregar de novo no método carregaEspeciais..
     nomeMusica = "Sounds/andromedario.mid";
-    nomeBackground = "FX/Background.pcx";
+    nomeBackground = "Fx/Background.pcx";
     if (cod == 1) nomeFigura = "Fx/Personagem.bmp"; //Esse if é só pra teste tb..
     else nomeFigura = "Fx/Personagem2.bmp";
 
