@@ -1,6 +1,6 @@
 #ifndef TECLA_H
 #define TECLA_H
-#include <Allegro.h>
+#include <allegro.h>
 
 
 class Tecla
