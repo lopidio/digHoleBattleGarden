@@ -7,7 +7,6 @@ void funcTempo(void)
 {
     tempoFPS = true;
 }
-END_OF_FUNCTION(funcTempo)
 
 void installFPS(int fps){
     LOCK_VARIABLE(tempoFPS);

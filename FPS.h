@@ -1,5 +1,6 @@
 #ifndef FPS_H_INCLUDED
 #define FPS_H_INCLUDED
+#include "allegro.h"
 
 volatile bool tempoFPS = true;
 void funcTempo(void)

@@ -6,7 +6,7 @@
 #include "Life.h"
 #include "Animacao.h"
 #include "Tecla.h"
-#include <vector.h>
+#include <vector>
 
 class Fase
 {

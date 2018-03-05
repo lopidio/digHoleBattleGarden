@@ -398,7 +398,7 @@ void Fase::desenhaNumero(unsigned int valor, char precisao, short x, short y, BI
 }
 
 void Fase::pausar(BITMAP* telaAntiga){
-    vector<Tecla> tecla;
+    std::vector<Tecla> tecla;
     tecla.push_back(Tecla(KEY_UP));
     tecla.push_back(Tecla(KEY_DOWN));
     tecla.push_back(Tecla(KEY_RIGHT));

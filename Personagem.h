@@ -1,7 +1,7 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
 #include <allegro.h>
-#include <vector.h>
+#include <vector>
 #include "Especial.h"
 
 
@@ -27,7 +27,7 @@ protected:
 private:
         char *nomeMusica, *nomeBackground, *nomeFigura, cod;
         SAMPLE* somEspecial;
-        vector<Especial> especial;
+        std::vector<Especial> especial;
         int contFrame;
         BITMAP* nome;
         BITMAP* figura; //Animações aqui

@@ -2,7 +2,7 @@
 #define PLAYER_H
 #include "Toupeira.h"
 #include "Personagem.h"
-#include <vector.h>
+#include <vector>
 #include <ctime>
 #include <allegro.h>
 
@@ -38,7 +38,7 @@ private:
     char playerID;
     unsigned short KEY_ESPECIAL;
     Personagem* personagem;
-    vector<Toupeira> toupeira;
+    std::vector<Toupeira> toupeira;
     bool especialAtivo;
 };
 
