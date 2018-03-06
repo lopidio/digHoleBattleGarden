@@ -104,7 +104,7 @@ Fase::Fase(Personagem* pe1, Personagem* pe2, char frames)
     remove_int(loading);
 
     video_page[0] = create_video_bitmap(SCREEN_W, SCREEN_H);
-    video_page[1] = video_page[0];//create_video_bitmap(SCREEN_W, SCREEN_H);
+    video_page[1] = create_video_bitmap(SCREEN_W, SCREEN_H);
     viraPagina = false;
             std::cout << " pagina0: " << video_page[0] << std::endl;
             std::cout << " pagina1: " << video_page[1] << std::endl;
@@ -158,7 +158,6 @@ void Fase::animRound(){ //Double Buffer!
         trofeu1->imprime(video_page[viraPagina]);
         trofeu2->imprime(video_page[viraPagina]);
 //        draw_sprite(screen, buffer,0,0);
-        std::cout<<" i: " << i <<"; SECOND   viraPagina: "<< viraPagina << std::endl;
         show_video_bitmap(video_page[viraPagina]);
         syncFPS();
     }
@@ -414,7 +413,7 @@ void Fase::pausar(BITMAP* telaAntiga){
     tecla.push_back(Tecla(KEY_DOWN));
     tecla.push_back(Tecla(KEY_RIGHT));
     tecla.push_back(Tecla(KEY_LEFT));
-    int volWave, volMid;
+    int volWave = 100, volMid = 100;
     pause = load_bitmap("Fx/Pause.bmp", NULL);
     menuPause = load_bitmap("Fx/MenuPause.bmp", NULL);
     BITMAP *fundo = create_bitmap(800, 600);

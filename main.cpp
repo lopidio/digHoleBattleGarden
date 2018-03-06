@@ -1,19 +1,17 @@
 #include <allegro.h>
 #include "Fase.h"
-#include <iostream>
 
 int main()
 {
     if (allegro_init() != 0) exit(1);
     set_color_depth(32);
-    if (set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 00, 00) != 0) { //Tava 800, 600 o virtual
+    if (set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 1600, 1200) != 0) { //Tava 800, 600 o virtual
         if (set_gfx_mode(GFX_SAFE, 800, 600, 00, 00) != 0) { //Aqui também!
             set_gfx_mode(GFX_TEXT, 0, 0, 0, 0);
             allegro_message("Impossivel setar modo grafico\n%s\n", allegro_error);
             return 1;
         }
    }
-   std::cout << __LINE__ << std::endl;
     install_keyboard();
     set_window_title("Dig Hole Battle Garden");
     install_timer();
@@ -22,7 +20,7 @@ int main()
         exit(1);
     }
     char a;
-    set_volume(220, 100); //WAV, MIDI    ----> 220, 100  <-- Melhor que tem!
+    set_volume(520, 100); //WAV, MIDI    ----> 220, 100  <-- Melhor que tem!
     do{
         clear_bitmap(screen);
         Personagem* pe1 = new Personagem(1);
